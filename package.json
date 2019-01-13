@@ -13,7 +13,7 @@
     "server": "nodemon index.js",
     "client": "yarn --cwd client start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --cwd client && yarn run build --cwd client"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --cwd client && yarn build --cwd client"
   },
   "author": "",
   "license": "ISC",
