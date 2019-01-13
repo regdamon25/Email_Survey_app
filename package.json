@@ -15,7 +15,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "client-install": "(cd ./client && yarn install)",
     "client-build": "(cd ./client && yarn run build)",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --cwd client && yarn build --cwd client"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build"
   },
   "author": "",
   "license": "ISC",
