@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A dope FULL-STACK APP",
   "main": "index.js",
   "engines": {
     "node": "11.1.0",
@@ -13,7 +13,7 @@
     "server": "nodemon index.js",
     "client": "yarn --cwd client start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --prefix client && yarn run build --prefix client"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --cwd client && yarn run build --prefix client"
   },
   "author": "",
   "license": "ISC",
