@@ -10,21 +10,31 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --prefix client && yarn build --prefix client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "9.x",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "cookie-session": "^2.0.0-beta.3",
-    "eslint": "^5.11.1",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
     "express": "^4.16.4",
     "mongoose": "^5.4.1",
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "stripe": "^6.20.0"
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^3.x",
     "prettier": "^1.15.3"
   }
 }
