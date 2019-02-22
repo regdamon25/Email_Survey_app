@@ -5,5 +5,7 @@ module.exports = {
     mongoURI:'mongodb://Regman25:102816sbr!@ds023478.mlab.com:23478/eemaily-dev',
     cookieKey: 'aljsiurhwoccwljkjhfiuhgwiubdkzbf',
     stripePublishableKey: 'pk_test_qrdU3hFZcswqBTkfQJGdwLW3',
-    stripeSecretKey: 'sk_test_bpEK09aCMTpuf1JpzSlHLulr'
+    stripeSecretKey: 'sk_test_bpEK09aCMTpuf1JpzSlHLulr',
+    sendGridKey: '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',
+    redirectDomain: 'http://localhost:3000'
 };

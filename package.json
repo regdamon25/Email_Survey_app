@@ -12,14 +12,16 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "yarn --cwd client start",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "dev": "concurrently \"yarn server\" \"yarn client\" \"yarn webhook\"",
     "client-install": "(cd ./client && yarn install)",
     "client-build": "(cd ./client && yarn run build)",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build",
+    "webhook": "ssh -R abyucabeiufboeif7834r:80:localhost:5000 serveo.net"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "babel-eslint": "9.x",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
@@ -29,10 +31,14 @@
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
     "express": "^4.16.4",
+    "forever": "^0.15.3",
+    "localtunnel": "^1.9.1",
+    "lodash": "^4.17.11",
     "mongoose": "^5.4.1",
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^4.2.0",
     "stripe": "^6.20.0"
   },
   "devDependencies": {

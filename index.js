@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 require ('./routes/authRoutes')(app);
 require ('./routes/billingRoutes')(app);
+require ('./routes/surveyRoutes')(app);
 
 //This code is only to be ran when it's inside of production i.e inside of Heroku:
 if (process.env.NODE_ENV === 'production') {
@@ -36,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
     /*Here EXPRESS will serve up the index.html file
     If it doesn't recognize the route.*/
     const path = require('path');
-    app.get('*', (res, req) => {
+    app.get('*', (req, res) => {
        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')); 
     });
 }
