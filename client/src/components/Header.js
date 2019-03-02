@@ -28,7 +28,7 @@ class Header extends Component {
         console.log(this.props);
         return (
             <nav>
-                <div className="nav-wrapper">
+                <div className="nav-wrapper #b71c1c red darken-4">
                     <Link
                         to={this.props.auth ? '/surveys' : '/'}
                         className="left brand-logo"
@@ -37,6 +37,7 @@ class Header extends Component {
                     </Link>
                     <ul className="right">
                         {this.renderContent()}
+                        <li><a href="mobile.html">Mobile</a></li>
                     </ul>
                 </div>
             </nav>
